@@ -1,16 +1,16 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="#">Sunshine Hospital</a>
+    <a class="navbar-brand" [routerLink]="['/home']" >Sunshine Hospital</a>
 
     <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Services</a>
+      <li class="nav-item"  routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/servelist']" >Services</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Doctors</a>
+      <li class="nav-item" routerLinkActive="active" >
+        <a class="nav-link" [routerLink]="['/doctors']" >Doctors</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Appointments</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/appointments']" >Appointments</a>
       </li>
     </ul>
 
