@@ -1,6 +1,6 @@
 import {Routes} from '@angular/router';
 import { AppointmentsComponent } from './appointments/appointments.component';
-import { DoctorsComponent } from './doctors/doctors.component';
+import { DoctorsComponent } from './doctorss/doctors/doctors.component';
 import { HomeComponent } from './home/home.component';
 import { ServelistComponent } from './Servelist/Servelist.component';
 import { AuthGuard } from './_guards/auth.guard';

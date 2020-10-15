@@ -4,6 +4,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { RouterModule } from '@angular/router';
+import { JwtModule, JwtModuleOptions } from '@auth0/angular-jwt';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -12,10 +13,10 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServelistComponent } from './Servelist/Servelist.component';
-import { DoctorsComponent } from './doctors/doctors.component';
+import { DoctorsComponent } from './doctorss/doctors/doctors.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { appRoutes } from './routes';
-
+import { DoctorCardComponent } from './doctorss/doctor-card/doctor-card.component';
 
 @NgModule({
   declarations:  [
@@ -25,7 +26,8 @@ import { appRoutes } from './routes';
       RegisterComponent,
       ServelistComponent,
       DoctorsComponent,
-      AppointmentsComponent
+      AppointmentsComponent,
+      DoctorCardComponent
    ],
   imports: [
     BrowserModule,
@@ -33,7 +35,16 @@ import { appRoutes } from './routes';
     FormsModule,
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter:() => {
+          return localStorage.getItem('token');
+        },
+        allowedDomains: ['localhost:5000'],
+        disallowedRoutes: ['localhost:5000/api/auth']
+      }
+    })
   ],
   providers: [
     AuthService

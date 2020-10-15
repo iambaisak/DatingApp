@@ -1,0 +1,8 @@
+div.container{
+    padding-top: 100px;
+}
+div.row{
+    align-items: center;
+    padding-left: 150px;
+    padding-bottom: 30px;
+}

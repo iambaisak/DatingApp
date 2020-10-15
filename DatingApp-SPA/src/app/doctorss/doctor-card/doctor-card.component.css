@@ -1,0 +1,9 @@
+div{
+    text-align: center;
+}
+div.card{
+    padding-bottom: 30px;
+}
+div.card-body{
+    padding-bottom: 10px;
+}
