@@ -1,0 +1,19 @@
+<div >
+  <h2>Appointment with Doctor</h2>
+</div>
+<div class="row">
+  <table id="dp">
+    <thead>
+       <tr>
+          <th>Time Slot</th>
+          <th>Patient Name</th>
+       </tr>
+    </thead>
+    <tbody>
+       <tr *ngFor="let da of doctorappointments">
+          <td>{{ da.timeSlot}}:00 hours</td>
+          <td>{{ da.patientName }}</td>
+       </tr>
+    </tbody>
+ </table>
+</div>

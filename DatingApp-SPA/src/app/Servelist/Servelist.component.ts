@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Doctor } from '../_models/doctor';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-Servelist',
@@ -6,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./Servelist.component.css']
 })
 export class ServelistComponent implements OnInit {
+  @Input() doctor: Doctor;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }

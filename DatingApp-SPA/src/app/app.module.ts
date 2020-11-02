@@ -5,6 +5,7 @@ import {FormsModule} from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { RouterModule } from '@angular/router';
 import { JwtModule, JwtModuleOptions } from '@auth0/angular-jwt';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -17,9 +18,14 @@ import { DoctorsComponent } from './doctorss/doctors/doctors.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { appRoutes } from './routes';
 import { DoctorCardComponent } from './doctorss/doctor-card/doctor-card.component';
+import { ServiceDepartmentComponent } from './ServiceDepartment/ServiceDepartment.component';
+import { PatientsComponent } from './patients/patients.component';
+import { AssignPatientComponent } from './AssignPatient/AssignPatient.component';
+import { AddPatientComponent } from './AddPatient/AddPatient.component';
+import { ViewAppointmentsComponent } from './ViewAppointments/ViewAppointments.component';
 
 @NgModule({
-  declarations:  [
+  declarations:  [					
     AppComponent,
       NavComponent,
       HomeComponent,
@@ -27,10 +33,16 @@ import { DoctorCardComponent } from './doctorss/doctor-card/doctor-card.componen
       ServelistComponent,
       DoctorsComponent,
       AppointmentsComponent,
-      DoctorCardComponent
+      DoctorCardComponent,
+      PatientsComponent,
+      ServiceDepartmentComponent,
+      AssignPatientComponent,
+      AddPatientComponent,
+      ViewAppointmentsComponent
    ],
   imports: [
     BrowserModule,
+    Ng2SearchPipeModule,
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,

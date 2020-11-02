@@ -1,3 +1,6 @@
+import { DoctorPatient } from './DoctorPatient';
+import { Patient } from './Patient';
+
 export interface Doctor {
     DoctorId: number;
     Name: string;
@@ -6,4 +9,5 @@ export interface Doctor {
     City: string;
     Department: string;
     PhotoUrl: string;
+    doctorPatient: DoctorPatient[];
 }

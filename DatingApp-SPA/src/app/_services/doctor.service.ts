@@ -16,8 +16,4 @@ export class DoctorService {
   getDoctors(): Observable<Doctor[]>{
     return this.http.get<Doctor[]>(this.baseUrl + 'doctors');
   }
-
-  getDoctor(id): Observable<Doctor>{
-    return this.http.get<Doctor>(this.baseUrl + 'doctors/' + id);
-  }
 }

@@ -1,4 +1,6 @@
 ﻿using HospitalApp.DataInterfaces;
+using HospitalApp.Dtos;
+using HospitalApp.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -14,11 +16,21 @@ namespace HospitalApp.Controllers
     public class DoctorsController : ControllerBase
     {
         private readonly IDoctorRepository _repo;
+        private readonly IPatientRepository _rep;
 
-        public DoctorsController(IDoctorRepository repo)
+        public DoctorsController(IDoctorRepository repo, IPatientRepository rep)
         {
             _repo = repo;
+            _rep = rep;
         }
+
+        //[HttpGet("{search}/{name}")]
+       // public async Task<IActionResult> Search(string name)
+        //{
+          //  var result = await _repo.Search(name);
+            //return Ok(result);
+        //}
+
         [HttpGet]
         public async Task<IActionResult> GetDoctors()
         {
@@ -26,11 +38,11 @@ namespace HospitalApp.Controllers
             return Ok(doctors);
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetDoctor(int id)
+        [HttpGet("{name}")]
+        public async Task<IActionResult> GetPatientDoctors(string name)
         {
-            var doctor = await _repo.GetDoctor(id);
-            return Ok(doctor);
+            var doctors = await _rep.GetPatientDoctors(name);
+            return Ok(doctors);
         }
     }
 }

@@ -1,3 +1,73 @@
-<p>
-  appointments works!
-</p>
+<form #PatientForm="ngForm" (ngSubmit)="AddAppointment()">
+  <h2 class="text-center text-primary">Add an Appointment</h2>
+  <hr>
+
+  <div class="form-group">
+    <input type="number" class="form-control" required name="doctorid" [(ngModel)]="model.doctorid" placeholder="DoctorId" required>
+  </div>
+
+  <div class="form-group">
+    <input type="number" class="form-control" required name="timeslot" [(ngModel)]="model.timeslot" placeholder="TimeSlot" required>
+  </div>
+
+  <div class="form-group">
+    <input type="number" class="form-control" required name="patientid" [(ngModel)]="model.patientid" placeholder="PatientId" required>
+  </div>
+
+
+  <div class="form-group text-center">
+    <button class="btn btn-success" type="submit">Add</button>
+    <button class="btn btn-default" type="button">Cancel</button>
+  </div>
+  
+</form>
+
+<div class="form-group text-center">
+  <button class="btn btn-default" type="button">View Appointments</button>
+</div>
+<table id="customers">
+  <tr>
+    <th>Doctor Id</th>
+    <th>Doctor Name</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td><a href="/appointments/1">Seema Yadav</a></td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td><a href="/appointments/2">Gajendra Kumar</a></td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td><a href="/appointments/3">Rahul Chandra</a></td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td><a href="/appointments/4">Mohan Srivastav</a></td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td><a href="/appointments/5">Raj Gupta</a></td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td><a href="/appointments/6">Pritam Gujaare</a></td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td><a href="/appointments/7">Dev Kumar</a></td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td><a href="/appointments/8">Suchitra Devi</a></td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td><a href="/appointments/9">Ranjit Biswal</a></td>
+  </tr>
+  <tr>
+    <td>1002</td>
+    <td><a href="/appointments/1002">Priyanka Chauhan</a></td>
+  </tr>
+</table>

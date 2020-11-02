@@ -1,0 +1,9 @@
+<div class="row">
+  <div *ngFor="let patient of patients">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{patient.name}}</h5>
+        <p class="card-text">{{patient.gender}}, {{patient.age}}</p>
+      </div>
+    </div>
+  </div>

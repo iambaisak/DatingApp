@@ -19,6 +19,27 @@ namespace HospitalApp.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("HospitalApp.Models.Appointments", b =>
+                {
+                    b.Property<int>("Appid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("DoctorId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PatientId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Timeslot")
+                        .HasColumnType("int");
+
+                    b.HasKey("Appid");
+
+                    b.ToTable("Appointments");
+                });
+
             modelBuilder.Entity("HospitalApp.Models.Doctor", b =>
                 {
                     b.Property<int>("DoctorId")

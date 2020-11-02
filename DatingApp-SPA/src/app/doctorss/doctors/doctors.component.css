@@ -6,3 +6,16 @@ div.row{
     padding-left: 150px;
     padding-bottom: 30px;
 }
+.topnav {
+    overflow: hidden;
+    background-color: white
+  }
+
+  .topnav input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 14px;
+    margin-right: 16px;
+    font-size: 17px;
+  }
